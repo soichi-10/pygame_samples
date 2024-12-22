@@ -5,7 +5,7 @@
 import pygame
 from pygame.locals import Rect
 
-# ステップ4
+# ステップ４
 LCD_0 = (0, 1, 1, 1, 0,
          1, 0, 0, 0, 1,
          1, 0, 0, 0, 1,

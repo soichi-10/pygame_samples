@@ -31,7 +31,7 @@ lcd1.init_row(X_ORG=8, Y_ORG=8, COL_INTV=6)
 
 
 def LCD_display(x, y):
-    # ステップ4
+    # ステップ４
     code = int((x / 8) % 10)
     text1, rect1 = font1.render(str(code), WHITE)
     rect1.center = (x, y)
