@@ -55,7 +55,7 @@
 >>~~~
 
 
-https://github.com/user-attachments/assets/9cdcd9fb-195e-4570-835f-3a9d4dff44cf
+>https://github.com/user-attachments/assets/9cdcd9fb-195e-4570-835f-3a9d4dff44cf
 
 
 変更後
@@ -76,7 +76,7 @@ https://github.com/user-attachments/assets/9cdcd9fb-195e-4570-835f-3a9d4dff44cf
 >>~~~
 
 
-https://github.com/user-attachments/assets/f54b113f-3504-48f6-ab05-73635783311e
+>https://github.com/user-attachments/assets/f54b113f-3504-48f6-ab05-73635783311e
 
 
 ### ステップ4
