@@ -147,6 +147,11 @@
 >>~~~
 >>code = int((x / 8) % 3)
 >>~~~
+>
+>
+>https://github.com/user-attachments/assets/0d8bace7-00d0-4f12-8b75-00236f38eb1f
+>
+>
 >>変更後↓↓
 >>~~~
 >>code = int((x / 8) % 10)
