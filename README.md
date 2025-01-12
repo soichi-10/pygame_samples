@@ -53,7 +53,11 @@
 >>if x1 > 4:
 >>    x1 = 0
 >>~~~
+>
+>
 >https://github.com/user-attachments/assets/9cdcd9fb-195e-4570-835f-3a9d4dff44cf
+>
+>
 変更後
 >x座標を1ずつ増やす
 >>~~~
@@ -70,7 +74,11 @@
 >>if y1 > 6:
 >>    y1 = 0
 >>~~~
+>
+>
 >https://github.com/user-attachments/assets/f54b113f-3504-48f6-ab05-73635783311e
+>
+>
 ### ステップ4
 #### demo_LCD_font_01.py lcd_font_pg.py
 0~9を表示させる
