@@ -171,4 +171,4 @@
 >>lcd1.update_col(col=1, code=code1)
 >>lcd1.update_col(col=2, code=code)
 >>~~~
-![](images/step4.png)
+>![](images/step4.png)
