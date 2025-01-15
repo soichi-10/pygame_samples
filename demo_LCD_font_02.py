@@ -14,8 +14,8 @@ CYAN = (120, 120, 250)
 YELLOW = (250, 250, 20)
 WHITE = (250, 250, 250)
 
-WINDOW_WIDTH = 320
-WINDOW_HEIGHT = 400
+WINDOW_WIDTH = 1000
+WINDOW_HEIGHT = 200
 
 pygame.init()
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
@@ -33,19 +33,26 @@ lcd1.init_row(X_ORG=8, Y_ORG=8, COL_INTV=6)
 def LCD_display(x, y):
     # ステップ４
     fontcode = int(x / 8)
-    code = int((x / 8) % 10)
-    code1 = int((x / 10 / 8) % 10)
-    code2 = int((x / 100 / 8) % 10)
+#(ord(''))
+# ' 39
+# \ 92
     text1, rect1 = font1.render(str(fontcode), WHITE)
-    rect1.center = (x, y)
+    rect1.center = (x * 100000, y * 100000)
     screen.blit(text1, rect1)
     # LCD sim
     # 一番左
-    lcd1.update_col(col=0, code=code2 + 48)
+    lcd1.update_col(col=0, code=39)
     # 左から二番目
-    lcd1.update_col(col=1, code=code1 + 48)
+    lcd1.update_col(col=1, code=92)
     # 左から三番目
-    lcd1.update_col(col=2, code=code + 48)
+    lcd1.update_col(col=2, code=(ord('{')))
+    lcd1.update_col(col=3, code=(ord('|')))
+    lcd1.update_col(col=4, code=(ord('}')))
+    lcd1.update_col(col=5, code=(ord('~')))
+    lcd1.update_col(col=6, code=(ord('@')))
+    lcd1.update_col(col=7, code=(ord('[')))
+    lcd1.update_col(col=8, code=(ord('^')))
+    lcd1.update_col(col=9, code=(ord(']')))
 
 def infinite_loop():
     x = WINDOW_WIDTH * 0.5
