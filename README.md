@@ -32,6 +32,26 @@
 ><img src="images/5.png" width="500" />
 >
 >~~~
+>screen.fill((0, 0, 0))
+>~~~
+><img src="images/15.png" width="500" />
+>
+>~~~
+>screen.fill((255, 0, 0))
+>~~~
+><img src="images/16.png" width="500" />
+>
+>~~~
+>screen.fill((0, 255, 0))
+>~~~
+><img src="images/17.png" width="500" />
+>
+>~~~
+>screen.fill((0, 0, 255))
+>~~~
+><img src="images/18.png" width="500" />
+>
+>~~~
 >screen.fill((255, 255, 255))
 >~~~
 ><img src="images/6.png" width="500" />

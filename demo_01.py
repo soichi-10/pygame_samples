@@ -20,7 +20,7 @@ while running:
             running = False
 
     #　ウィンドウの背景の色
-    screen.fill((238, 238, 170))  # back ground color
+    screen.fill((0, 0, 255))  # back ground color
 
     pygame.draw.circle(screen, (176, 176, 222), (320, 240), 120)
     pygame.draw.circle(screen, (222, 176, 222), (120, 120), 20)
