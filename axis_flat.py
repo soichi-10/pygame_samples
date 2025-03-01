@@ -65,4 +65,4 @@ if __name__ == "__main__":
     reset_minecraft_world(mc, width=48)
     # draw_XYZ_axis(mc)
     # clear_XYZ_axis(mc, wait=0.05)
-    draw_XYZ_axis(mc, wait=0.25)
+    draw_XYZ_axis(mc, wait=0.001)
