@@ -6,88 +6,88 @@
 >~~~
 >screen = pygame.display.set_mode([640, 480])
 >~~~
-><img src="images/1.png" width="320" />
+><img src="images/1.png" width="500" />
 >
 >~~~
 >screen = pygame.display.set_mode([1280, 960])
 >~~~
-><img src="images/2.png" width="320" />
+><img src="images/2.png" width="500" />
 
 ウィンドウの名前
 >~~~
 >pygame.display.set_caption("pygame demo - window title here")
 >~~~
-><img src="images/3.png" width="320" />
+><img src="images/3.png" width="500" />
 >
 >~~~
 >pygame.display.set_caption("aaaaaaaaaaaaaaaaaaaaaaaaaa")
 >~~~
-><img src="images/4.png" width="320" />
+><img src="images/4.png" width="500" />
 
 
 ウィンドウの背景の色
 >~~~
 >screen.fill((238, 238, 170))
 >~~~
-><img src="images/5.png" width="320" />
+><img src="images/5.png" width="500" />
 >
 >~~~
 >screen.fill((255, 255, 255))
 >~~~
-><img src="images/6.png" width="320" />
+><img src="images/6.png" width="500" />
 
 図形の種類、色、座標、大きさ
 >~~~
->pygame.draw.circle(screen, (176, 176, 222), (320, 240), 120)
+>pygame.draw.circle(screen, (176, 176, 222), (500, 240), 120)
 >pygame.draw.circle(screen, (222, 176, 222), (120, 120), 20)
 >pygame.draw.circle(screen, (222, 176, 222), (120, 120), 20)
 >pygame.draw.rect(screen, (120, 120, 120), Rect(120, 120, 200, 120))
 >~~~
-><img src="images/7.png" width="320" />
+><img src="images/7.png" width="500" />
 >
 >~~~
->pygame.draw.circle(screen, (176, 176, 222), (320, 240), 120)
+>pygame.draw.circle(screen, (176, 176, 222), (500, 240), 120)
 >pygame.draw.circle(screen, (222, 176, 222), (120, 120), 20)
 >pygame.draw.circle(screen, (222, 176, 222), (120, 120), 20)
 >pygame.draw.rect(screen, (120, 120, 120), Rect(120, 120, 200, 120))
 >pygame.draw.rect(screen, (120, 240, 120), Rect(120, 120, 200, 120))
 >~~~
-><img src="images/8.png" width="320" />
+><img src="images/8.png" width="500" />
 
 動く点のon,offそれぞれの色
 >~~~
 >color_on = (240, 120, 120)
 >color_off = (120, 120, 120)
 >~~~
-><img src="images/9.png" width="320" />
+><img src="images/9.png" width="500" />
 >
 >~~~
 >color_on = (120, 120, 120)
 >color_off = (240, 120, 120)
 >~~~
-><img src="images/10.png" width="320" />
+><img src="images/10.png" width="500" />
 
 動く点の四角の横の数
 >~~~
 >for x0 in range(5):
 >~~~
-><img src="images/11.png" width="320" />
+><img src="images/11.png" width="500" />
 >
 >~~~
 >for x0 in range(10):
 >~~~
-><img src="images/12.png" width="320" />
+><img src="images/12.png" width="500" />
 
 動く点の四角の縦の数
 >~~~
 >for y0 in range(7):
 >~~~
-><img src="images/13.png" width="320" />
+><img src="images/13.png" width="500" />
 >
 >~~~
 >for y0 in range(14):
 >~~~
-><img src="images/14.png" width="320" />
+><img src="images/14.png" width="500" />
 
 ### ステップ3
 #### demo_01.py
