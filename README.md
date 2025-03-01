@@ -170,7 +170,8 @@ demo_lcd_font.pyからLCDフォント表示の要素を抜き出し、demo_02.py
 >>~~~
 >>dt_now.hour
 >>~~~
->>などの定義を追っていくとdatetime.pyでげっとしていることがわかる。
+>>などの定義を追っていくとdatetime.pyでゲットしていることがわかる。
+>![](images/step5.png)
 >>
 >年月日をゲットする
 >>datetime.pyの中にあるdt_now.day dt_now.month dt_now.yearを使う。
