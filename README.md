@@ -132,7 +132,7 @@
 >>code = int((x / 8) % 10)
 >>~~~
 >
->https://github.com/user-attachments/assets/0d8bace7-00d0-4f12-8b75-00236f38eb1f
+>https://github.com/user-attachments/assets/6ba812dd-0b4c-4e75-81f8-5c428dd3b57c
 
 複数の数字を表示できるようにする
 >codeとlcd1.update_colを増やす
