@@ -224,6 +224,8 @@ kadai_01.pyからdemo_04.pyに取り込んだコードを使う
 
 axis_flat.pyを動かす
 >
->https://github.com/user-attachments/assets/1a42be04-1f05-4b02-a7ed-714842339b9b
+>https://github.com/user-attachments/assets/f6864c99-631d-473e-88e1-6a5234a85394
+
+
 
 
