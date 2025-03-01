@@ -138,11 +138,6 @@
 >codeとlcd1.update_colを増やす
 >>~~~
 >>code = int((x / 8) % 10)
->>lcd1.update_col(col=0, code=code)
->>~~~
->>変更後↓↓
->>~~~
->>code = int((x / 8) % 10)
 >>code1 = int((x / 10 / 8) % 10)
 >>code2 = int((x / 100 / 8) % 10)
 >>lcd1.update_col(col=0, code=code2)
@@ -150,3 +145,77 @@
 >>lcd1.update_col(col=2, code=code)
 >>~~~
 >![](images/step4.png)
+
+### ステップ5、ステップ6
+#### lcd_font_pg.py demo_03.py
+demo_lcd_font.pyからLCDフォント表示の要素を抜き出し、demo_02.pyを複製して作ったdemo_03.pyに取り込む。
+>lcd_font_pg.pyと違うところを同じにする
+>>~~~
+>>display1 = Seven_seg(screen)
+>>display2 = Seven_seg(screen)
+>>
+>>num
+>>~~~
+>>の部分を
+>>~~~
+>>display1 = LCD_font(screen)
+>>display2 = LCD_font(screen)
+>>
+>>code
+>>~~~
+>>にする
+
+時分秒をゲットしている方法を調べ、年月日をゲットする。
+>時分秒をゲットしている方法を調べる
+>>~~~
+>>dt_now.hour
+>>~~~
+>>などの定義を追っていくとdatetime.pyでげっとしていることがわかる。
+>>
+>年月日をゲットする
+>>datetime.pyの中にあるdt_now.day dt_now.month dt_now.yearを使う。
+
+「ー」のLCDフォントを追加する。
+>lcd_font_pg.pyにかく
+>>lcd_font_pg.pyに「ー」のコードを書いて、code=11で指定する。
+
+LCDフォントによる時刻、日付表示をおこなう。
+>dt_now.secondやdt_now.hourなどを使うようにする
+>>~~~
+>>display1.update_col(col=0, code=int(str(dt_now.year)[0]))
+>>display1.update_col(col=1, code=int(str(dt_now.year)[1]))
+>>display1.update_col(col=2, code=int(str(dt_now.year)[2]))
+>>display1.update_col(col=3, code=int(str(dt_now.year)[3]))
+>>display1.update_col(col=4, code=(ord('-')))
+>>display1.update_col(col=5, code=dt_now.month // 10)
+>>display1.update_col(col=6, code=int(str(dt_now.month)[0]))
+>>display1.update_col(col=7, code=(ord('-')))
+>>display1.update_col(col=8, code=int(str(dt_now.day)[0]))
+>>display1.update_col(col=9, code=dt_now.day % 10)
+>>
+>>display2.update_col(col=0, code=dt_now.hour // 10)
+>>display2.update_col(col=1, code=dt_now.hour % 10)
+>>display2.update_col(col=2, code=10 )
+>>display2.update_col(col=3, code=dt_now.minute // 10)
+>>display2.update_col(col=4, code=dt_now.minute % 10)
+>>display2.update_col(col=5, code=10 )
+>>display2.update_col(col=6, code=dt_now.second // 10)
+>>display2.update_col(col=7, code=dt_now.second % 10)
+>>~~~
+>>のように時間などの一桁目、二桁目などを使うようにする
+
+各種パラメーターを変化させ、見え方をアレンジしてみる。
+>BLOCK_SIZEやBLOCK_INTV、X_ORGなどの数を変える。
+>>BLOCK_SIZEで一ブロックの大きさ、BLOCK_INTVでブロック同士の間隔、X_ORG、Y_ORGで座標を変えることができる。
+
+### ステップ7
+#### axis_flat.py demo_04.py kadai_01.py
+kadai_01.pyからdemo_04.pyに取り込んだコードを使う
+>kadai_01.pyを使うのに必要なファイルを移動する
+>>minecraft_remote_itkidsからparam_MCJE.pyやmcjeフォルダをpygame_samplesに移動する
+>
+>param_MCJE.pyをマイクラリモコンができるように設定してdemo_04.pyを実行する
+>>PLAYER_NAME、PLAYER_ORIGIN、ADRS_MCR、PORT_MCRを公開サーバーでリモコンをできるように設定する。
+>>demo_04.pyを実行する
+
+axis_flat.pyを動かす
