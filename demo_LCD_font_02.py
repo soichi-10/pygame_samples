@@ -40,19 +40,14 @@ def LCD_display(x, y):
     rect1.center = (x * 100000, y * 100000)
     screen.blit(text1, rect1)
     # LCD sim
-    # 一番左
-    lcd1.update_col(col=0, code=39)
-    # 左から二番目
-    lcd1.update_col(col=1, code=92)
-    # 左から三番目
-    lcd1.update_col(col=2, code=(ord('{')))
-    lcd1.update_col(col=3, code=(ord('|')))
-    lcd1.update_col(col=4, code=(ord('}')))
-    lcd1.update_col(col=5, code=(ord('~')))
-    lcd1.update_col(col=6, code=(ord('@')))
-    lcd1.update_col(col=7, code=(ord('[')))
-    lcd1.update_col(col=8, code=(ord('^')))
-    lcd1.update_col(col=9, code=(ord(']')))
+    lcd1.update_col(col=0, code=(ord('s')))
+    lcd1.update_col(col=1, code=(ord('o')))
+    lcd1.update_col(col=2, code=(ord('i')))
+    lcd1.update_col(col=3, code=(ord('c')))
+    lcd1.update_col(col=4, code=(ord('h')))
+    lcd1.update_col(col=5, code=(ord('i')))
+    lcd1.update_col(col=6, code=(ord('r')))
+    lcd1.update_col(col=7, code=(ord('o')))
 
 def infinite_loop():
     x = WINDOW_WIDTH * 0.5

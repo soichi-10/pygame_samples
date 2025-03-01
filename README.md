@@ -43,22 +43,6 @@
 
 ### ステップ3
 #### demo_01.py
-最初
->x座標を1ずつ増やす
->>~~~
->>x1 += 1
->>~~~
->もしx座標が4ならx座標を0にする
->>~~~
->>if x1 > 4:
->>    x1 = 0
->>~~~
->
->
->https://github.com/user-attachments/assets/9cdcd9fb-195e-4570-835f-3a9d4dff44cf
->
->
-変更後
 >x座標を1ずつ増やす
 >>~~~
 >>x1 += 1
@@ -145,17 +129,11 @@
 >
 >demo_LCD_font_01.pyで何の数字を表示するか決める
 >>~~~
->>code = int((x / 8) % 3)
->>~~~
->
->
->https://github.com/user-attachments/assets/0d8bace7-00d0-4f12-8b75-00236f38eb1f
->
->
->>変更後↓↓
->>~~~
 >>code = int((x / 8) % 10)
 >>~~~
+>
+>https://github.com/user-attachments/assets/0d8bace7-00d0-4f12-8b75-00236f38eb1f
+
 複数の数字を表示できるようにする
 >codeとlcd1.update_colを増やす
 >>~~~
