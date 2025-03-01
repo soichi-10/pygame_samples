@@ -220,5 +220,6 @@ kadai_01.pyからdemo_04.pyに取り込んだコードを使う
 >param_MCJE.pyをマイクラリモコンができるように設定してdemo_04.pyを実行する
 >>PLAYER_NAME、PLAYER_ORIGIN、ADRS_MCR、PORT_MCRを公開サーバーでリモコンをできるように設定する。
 >>demo_04.pyを実行する
+>![](images/step7.png)
 
 axis_flat.pyを動かす
