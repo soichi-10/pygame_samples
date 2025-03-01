@@ -208,6 +208,8 @@ LCDフォントによる時刻、日付表示をおこなう。
 各種パラメーターを変化させ、見え方をアレンジしてみる。
 >BLOCK_SIZEやBLOCK_INTV、X_ORGなどの数を変える。
 >>BLOCK_SIZEで一ブロックの大きさ、BLOCK_INTVでブロック同士の間隔、X_ORG、Y_ORGで座標を変えることができる。
+>![](images/step6_1.png)
+>![](images/step6_2.png)
 
 ### ステップ7
 #### axis_flat.py demo_04.py kadai_01.py
