@@ -1,41 +1,41 @@
+import sys
+
+from mcje.minecraft import Minecraft
+import param_MCJE as param
+from param_MCJE import PLAYER_ORIGIN as po
+
+# Connect to minecraft and open a session as player with origin location
+mc = Minecraft.create(address=param.ADRS_MCR, port=param.PORT_MCR)
+result = mc.setPlayer(param.PLAYER_NAME, po.x, po.y, po.z)
+if ("Error" in result):
+    sys.exit(result)
+else:
+    print(result)
 # demo for 7-segment simulation
 # using the class 'Seven_seg' in seven_seg_pg.py
 
 from datetime import datetime
 import pygame
-from seven_seg_pg import Seven_seg
-from lcd_font_pg import LCD_font
-
-
-DARK_GRAY = (40, 40, 40)
-GRAY = (80, 80, 80)
-RED = (255, 0, 0)
-GREEN = (10, 250, 10)
-CYAN = (120, 120, 250)
-YELLOW = (250, 250, 20)
-WHITE = (250, 250, 250)
+from lcd_font_mc import LCD_font
 
 pygame.init()
 
 clock = pygame.time.Clock()
-screen = pygame.display.set_mode([800, 640])
-pygame.display.set_caption("pygame 7-segment display simulation")
-screen.fill(DARK_GRAY)
 
 ## 上から３つ目
-display1 = LCD_font(screen)
-display1.init_col(BLOCK_SIZE=9, BLOCK_INTV=10, COLOR_ON=GREEN, COLOR_OFF=DARK_GRAY)
+display1 = LCD_font(mc)
+display1.init_col(BLOCK_INTV=10, COLOR_ON=param.GOLD_BLOCK, COLOR_OFF=param.AIR)
 display1.init_row(X_ORG=8, Y_ORG=22, COL_INTV=6)
 
 ## 上から２つ目
-display2 = LCD_font(screen)
-display2.init_col(BLOCK_SIZE=7, BLOCK_INTV=8, COLOR_ON=YELLOW, COLOR_OFF=GRAY)
-display2.init_row(X_ORG=2, Y_ORG=18, COL_INTV=6)
+#display2 = LCD_font(screen)
+#display2.init_col(BLOCK_SIZE=7, BLOCK_INTV=8, COLOR_ON=YELLOW, COLOR_OFF=GRAY)
+#display2.init_row(X_ORG=2, Y_ORG=18, COL_INTV=6)
 
 ## 上から１つ目
-display3 = Seven_seg(screen)
-display3.init_col(BLOCK_SIZE=9, BLOCK_INTV=9, COLOR_ON=(120, 200, 250), COLOR_OFF=GRAY)
-display3.init_row(X_ORG=8, Y_ORG=8, COL_INTV=6)
+#display3 = Seven_seg(screen)
+#display3.init_col(BLOCK_SIZE=9, BLOCK_INTV=9, COLOR_ON=(120, 200, 250), COLOR_OFF=GRAY)
+#display3.init_row(X_ORG=8, Y_ORG=8, COL_INTV=6)
 
 
 running = True
@@ -69,19 +69,19 @@ while running:
         display1.update_col(col=8, code=dt_now.day // 10 + 48)
         display1.update_col(col=9, code=int(str(dt_now.day)[0]) + 48)
 
-        display2.update_col(col=0, code=dt_now.hour // 10 + 48)
-        display2.update_col(col=1, code=dt_now.hour % 10 + 48)
-        display2.update_col(col=2, code=10 + 48)
-        display2.update_col(col=3, code=dt_now.minute // 10 + 48)
-        display2.update_col(col=4, code=dt_now.minute % 10 + 48)
-        display2.update_col(col=5, code=10 + 48)
-        display2.update_col(col=6, code=dt_now.second // 10 + 48)
-        display2.update_col(col=7, code=dt_now.second % 10 + 48)
+        #display2.update_col(col=0, code=dt_now.hour // 10 + 48)
+        #display2.update_col(col=1, code=dt_now.hour % 10 + 48)
+        #display2.update_col(col=2, code=10 + 48)
+        #display2.update_col(col=3, code=dt_now.minute // 10 + 48)
+        #display2.update_col(col=4, code=dt_now.minute % 10 + 48)
+        #display2.update_col(col=5, code=10 + 48)
+        #display2.update_col(col=6, code=dt_now.second // 10 + 48)
+        #display2.update_col(col=7, code=dt_now.second % 10 + 48)
 
 
-        display3.disp_num2(zfil=False, rjust=3, num=count, base=10)
+        #display3.disp_num2(zfil=False, rjust=3, num=count, base=10)
 
-        display3.disp_num2(zfil=True, rjust=6, num=time_now, base=10)
+        #display3.disp_num2(zfil=True, rjust=6, num=time_now, base=10)
 
         pygame.display.flip()  # update_col
         clock.tick(20)  # FPS, Frame Per Second
