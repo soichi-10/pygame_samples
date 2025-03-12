@@ -28,9 +28,9 @@ display1.init_col(BLOCK_INTV=10, COLOR_ON=param.GOLD_BLOCK, COLOR_OFF=param.AIR)
 display1.init_row(X_ORG=8, Y_ORG=22, COL_INTV=6)
 
 ## 上から２つ目
-#display2 = LCD_font(screen)
-#display2.init_col(BLOCK_SIZE=7, BLOCK_INTV=8, COLOR_ON=YELLOW, COLOR_OFF=GRAY)
-#display2.init_row(X_ORG=2, Y_ORG=18, COL_INTV=6)
+display2 = LCD_font(mc)
+display2.init_col(BLOCK_INTV=10, COLOR_ON=param.GOLD_BLOCK, COLOR_OFF=param.AIR)
+display2.init_row(X_ORG=8, Y_ORG=0, COL_INTV=6)
 
 ## 上から１つ目
 #display3 = Seven_seg(screen)
@@ -67,23 +67,22 @@ while running:
         display1.update_col(col=6, code=int(str(dt_now.month)[0]) + 48)
         display1.update_col(col=7, code=(ord('-')))
         display1.update_col(col=8, code=dt_now.day // 10 + 48)
-        display1.update_col(col=9, code=int(str(dt_now.day)[0]) + 48)
+        display1.update_col(col=9, code=int(str(dt_now.day)[1]) + 48)
 
-        #display2.update_col(col=0, code=dt_now.hour // 10 + 48)
-        #display2.update_col(col=1, code=dt_now.hour % 10 + 48)
-        #display2.update_col(col=2, code=10 + 48)
-        #display2.update_col(col=3, code=dt_now.minute // 10 + 48)
-        #display2.update_col(col=4, code=dt_now.minute % 10 + 48)
-        #display2.update_col(col=5, code=10 + 48)
-        #display2.update_col(col=6, code=dt_now.second // 10 + 48)
-        #display2.update_col(col=7, code=dt_now.second % 10 + 48)
+        display2.update_col(col=0, code=dt_now.hour // 10 + 48)
+        display2.update_col(col=1, code=dt_now.hour % 10 + 48)
+        display2.update_col(col=2, code=10 + 48)
+        display2.update_col(col=3, code=dt_now.minute // 10 + 48)
+        display2.update_col(col=4, code=dt_now.minute % 10 + 48)
+        display2.update_col(col=5, code=10 + 48)
+        display2.update_col(col=6, code=dt_now.second // 10 + 48)
+        display2.update_col(col=7, code=dt_now.second % 10 + 48)
 
 
         #display3.disp_num2(zfil=False, rjust=3, num=count, base=10)
 
         #display3.disp_num2(zfil=True, rjust=6, num=time_now, base=10)
 
-        pygame.display.flip()  # update_col
         clock.tick(20)  # FPS, Frame Per Second
     screen.fill(DARK_GRAY)
 # infinit loop bottom ----

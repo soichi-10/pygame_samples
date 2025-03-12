@@ -22,6 +22,8 @@ from pygame.locals import Rect
 with open("fonts/font.txt", encoding="utf-8") as f:
         LCD_font_styles = f.read().split('\n')
 
+mc.postToChat('setp8')
+
 class LCD_font():
     def __init__(self, mc):
         self.mc = mc
@@ -54,10 +56,11 @@ class LCD_font():
                 x0 = self.X_ORG + self.COL_INTV * col
                 y0 = self.Y_ORG
                 # ドットの原点座標
-                org1 = (x0 + x * self.BLOCK_INTV -400, y0 + y * self.BLOCK_INTV +50)
+                org1 = (((x0 + x * self.BLOCK_INTV -400) // 10),-((y0 + y * self.BLOCK_INTV -150 )// 10) + 100,po.z -200)
                 # ドットを描く
-                self.mc.setBlock(org1[0], org1[1], po.z, color)
+                self.mc.setBlock(org1[0], org1[1], org1[2] + 10, color)
                 i += 1
+                print(org1)
 
                 
 print()

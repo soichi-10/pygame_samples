@@ -67,7 +67,7 @@ while running:
         display1.update_col(col=6, code=int(str(dt_now.month)[0]) + 48)
         display1.update_col(col=7, code=(ord('-')))
         display1.update_col(col=8, code=dt_now.day // 10 + 48)
-        display1.update_col(col=9, code=int(str(dt_now.day)[0]) + 48)
+        display1.update_col(col=9, code=int(str(dt_now.day)[1]) + 48)
 
         display2.update_col(col=0, code=dt_now.hour // 10 + 48)
         display2.update_col(col=1, code=dt_now.hour % 10 + 48)
