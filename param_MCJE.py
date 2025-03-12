@@ -10,6 +10,9 @@ print(f"param_MCJE loaded for {PLAYER_NAME} at {PLAYER_ORIGIN.x}, {PLAYER_ORIGIN
 
 # minecraft remote connection to the host at address:port
 ADRS_MCR = "mc-remote.xgames.jp"
+# ADRS_MCR = "192.168.0.22:25565"内部
+# ADRS_MCR = "59.84.49.239:25565"外部
+# ADRS_MCR = "mc-remote.xgames.jp"
 # ADRS_MCR = "code2createclub.mydns.jp"
 # PORT_MCR = 14712  # mod
 PORT_MCR = 25575  # plugin server
@@ -66,3 +69,7 @@ PINK_WOOL = "pink_wool"
 
 OAK_LOG = "oak_log"
 OAK_LEAVES = "oak_leaves"
+
+SNOW_BLOCK = "snow_block"
+SNOW = "snow"
+ICE = "ice"
