@@ -47,7 +47,7 @@ def clear_XYZ_axis(mc, wait=0.5):
         sleep(wait)
 
 def reset_minecraft_world(mc, width=48):
-    mc.setBlocks(-width, param.Y_SEA + 1, -width, width, param.AXIS_TOP + 200, width, param.AIR)
+    mc.setBlocks(-width, param.Y_SEA + 1, -width, width, param.Y_TOP, width, param.AIR)
     sleep(1)
     mc.setBlocks(-width, param.Y_SEA, -width, width, param.Y_SEA, width, param.GRASS_BLOCK)
     sleep(1)
