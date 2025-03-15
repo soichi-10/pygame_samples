@@ -9,9 +9,9 @@ PLAYER_ORIGIN = Vec3(-100, 0, 200)  # po.x, po.y, po.z
 print(f"param_MCJE loaded for {PLAYER_NAME} at {PLAYER_ORIGIN.x}, {PLAYER_ORIGIN.y}, {PLAYER_ORIGIN.z}")
 
 # minecraft remote connection to the host at address:port
-ADRS_MCR = "mc-remote.xgames.jp"
-# ADRS_MCR = "192.168.0.22:25565"内部
-# ADRS_MCR = "59.84.49.239:25565"外部
+ADRS_MCR = "192.168.0.9"
+# ADRS_MCR = "192.168.0.9"
+# ADRS_MCR = "localhost"
 # ADRS_MCR = "mc-remote.xgames.jp"
 # ADRS_MCR = "code2createclub.mydns.jp"
 # PORT_MCR = 14712  # mod
