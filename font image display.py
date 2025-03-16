@@ -1,60 +1,65 @@
-# demo for text display by freetype
-# pygame.freetype module is a replacement for pygame.font
-# for loading and rendering fonts.
-# freefontは、fontを置き換えるもの。こっちを使いましょう。
+import sys
 
+from mcje.minecraft import Minecraft
+import param_MCJE as param
+from param_MCJE import PLAYER_ORIGIN as po
+
+# Connect to minecraft and open a session as player with origin location
+mc = Minecraft.create(address=param.ADRS_MCR, port=param.PORT_MCR)
+result = mc.setPlayer(param.PLAYER_NAME, po.x, po.y, po.z)
+if ("Error" in result):
+    sys.exit(result)
+else:
+    print(result)
+    
 import pygame
 import pygame.freetype
-import numpy as np
 from pygame import surfarray
 
-
-BLACK = (0, 0, 0)
-DARK_GRAY = (40, 40, 40)
-GRAY = (80, 80, 80)
-RED = (255, 0, 0)
-GREEN = (10, 250, 10)
-CYAN = (120, 120, 250)
-YELLOW = (250, 250, 20)
-WHITE = (250, 250, 250)
+# 色設定
+BLACK = (0, 0, 0)  # 黒
+WHITE = (255, 255, 255)  # 白
 
 pygame.init()
-screen = pygame.display.set_mode((320, 120))  # display Surfaceの生成。
+
+# フォントを設定
+font1 = pygame.freetype.Font('fonts/misaki_gothic.ttf', 16)
+
+# テキストを設定
+text = 'こんにちは'
+
+# テキストのサイズを取得
+text_rect = font1.get_rect(text)
+width, height = text_rect.width, text_rect.height
+
+# ウィンドウサイズをテキストぴったりにする
+screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('freetype demo')
 
-# font1: Fontオブジェクト。指定文字サイズで全文字のビットマップデータをレンダリングして作成。
-# text1: Surfaceオブジェクト。Fontオブジェクトから必要な文字のビットマップデータを切り出して作成。
-# screen: display Surfaceオブジェクト。ウィンドウになる。
-# font1から、text1を作り(render)、screenに複写(blit)する。
-
-
-# フォントファイルを指定する場合
-# font1 = pygame.freetype.Font('hack-fonts/Hack-Regular.ttf', 36)
-# システムにインストールされているフォントの名前を指定する場合
-# font1 = pygame.freetype.SysFont('natume', 18)
-font1 = pygame.freetype.Font('fonts/misaki_gothic.ttf', 50)
-
+# 背景を白で塗る
 screen.fill(WHITE)
 
-# スクリーンに直接render_toする方法
-font1.antialiased = False  # アンチエイリアス、文字の平滑化は行わない。
-font1.render_to(screen, (20, 48), 'こんにちは', (BLACK))
+# テキストを (0, 0) に描画
+font1.render_to(screen, (0, 0), text, BLACK)
 
-# レンダリングされた結果を反映
+# 画面を更新
 pygame.display.flip()
 
-array = surfarray.array2d(screen)
-with open('output.txt', 'w') as file:
-    for row in array:
-        for pixel in row:
-            # 16進数からRGBに分解
-            red = (pixel >> 16) & 0xFF
-            green = (pixel >> 8) & 0xFF
-            blue = pixel & 0xFF
-            # RGB値をファイルに書き込む（改行付き）
-            file.write(f"({red}, {green}, {blue})\n")  # 各RGB値の後に改行を追加
+# サーフェスのグレースケールデータを取得
+array = surfarray.array2d(screen)  # これでscreenからグレースケールデータを取得
 
-# 何もしない無限ループ。ctrl-cやウィンドウを閉じたときの終了処理のみ。
+array_height, array_width = array.shape  # arrayのサイズを取得
+
+mc.postToChat('font image display')
+for y in range(array_height):
+    for x in range(array_width):
+        set_x = (y - width //2)
+        set_y = (x * -1 + 120)
+        mc.setBlock(set_x, set_y, 0, param.BLACK_WOOL if array[y][x] == 0 else param.AIR)
+        
+print(f"/tp {set_x - 100} {set_y} {po.z}")
+
+# 何もしない無限ループ。ウィンドウを閉じると終了
 running = True
 while running:
     for event in pygame.event.get():
