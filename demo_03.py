@@ -1,3 +1,4 @@
+# 時間表示のウィンドウ
 # demo for 7-segment simulation
 # using the class 'Seven_seg' in seven_seg_pg.py
 

@@ -1,3 +1,4 @@
+# 指定した文字を表示(何文字でも)
 # demo for handmade LCD font
 # フォント制作用    0,1,2のみ、作ってあります。
 
@@ -41,13 +42,6 @@ def LCD_display(x, y):
     screen.blit(text1, rect1)
     # LCD sim
     lcd1.update_col(col=0, code=(ord('s')))
-    lcd1.update_col(col=1, code=(ord('o')))
-    lcd1.update_col(col=2, code=(ord('i')))
-    lcd1.update_col(col=3, code=(ord('c')))
-    lcd1.update_col(col=4, code=(ord('h')))
-    lcd1.update_col(col=5, code=(ord('i')))
-    lcd1.update_col(col=6, code=(ord('r')))
-    lcd1.update_col(col=7, code=(ord('o')))
 
 def infinite_loop():
     x = WINDOW_WIDTH * 0.5

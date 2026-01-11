@@ -1,3 +1,4 @@
+# 課題1 金ブロック&posttochat
 import sys
 
 from mcje.minecraft import Minecraft

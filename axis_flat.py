@@ -1,3 +1,4 @@
+# clear&x軸y軸z軸
 import sys
 from time import sleep
 

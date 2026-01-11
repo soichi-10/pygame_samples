@@ -1,3 +1,4 @@
+# textをウィンドウに表示しマイクラでも流れる文字を出す
 import sys
 import time
 

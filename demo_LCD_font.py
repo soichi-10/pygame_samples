@@ -1,4 +1,4 @@
-# demo for handmade LCD font
+# demo for handmade LCD font(0~2)
 
 import pygame
 import pygame.freetype

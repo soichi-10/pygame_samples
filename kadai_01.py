@@ -1,3 +1,4 @@
+# 簡単な木を出すだけ
 import sys
 
 from mcje.minecraft import Minecraft

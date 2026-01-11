@@ -1,3 +1,4 @@
+# textをマイクラ、ウィンドウに表示する
 import sys
 
 from mcje.minecraft import Minecraft
@@ -26,7 +27,7 @@ pygame.init()
 font1 = pygame.freetype.Font('fonts/misaki_gothic.ttf', 16)
 
 # テキストを設定
-text = 'こんにちは'
+text = 'Hello, world!'
 
 # テキストのサイズを取得
 text_rect = font1.get_rect(text)

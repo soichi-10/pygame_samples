@@ -1,3 +1,4 @@
+# msgと日時 時間をマイクラに書く
 import sys
 
 from mcje.minecraft import Minecraft
@@ -75,6 +76,7 @@ while running:
         date_now = (dt_now.year * 10000
                     + dt_now.month * 100
                     + dt_now.day)
+        print("a")
 
         display1.update_col(col=0, code=int(str(dt_now.year)[0]) + 48)
         display1.update_col(col=1, code=int(str(dt_now.year)[1]) + 48)
@@ -96,7 +98,7 @@ while running:
         display2.update_col(col=6, code=dt_now.second // 10 + 48)
         display2.update_col(col=7, code=dt_now.second % 10 + 48)
 
-        msg = "dekita----"
+        msg = "hakoniwaserver"
         if len(msg) == 0:
             print("msg is empty")
         elif len(msg) <= 16:
@@ -106,7 +108,7 @@ while running:
             print("msg is too long")
 
 
-        clock.tick(20)  # FPS, Frame Per Second
+        clock.tick(1)  # FPS, Frame Per Second
 # infinit loop bottom ----
 
 pygame.quit()
